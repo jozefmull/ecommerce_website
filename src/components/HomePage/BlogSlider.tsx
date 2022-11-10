@@ -33,8 +33,6 @@ const BlogSlider = () => {
             navigation
             slidesPerView={4}
             className={`${styles.blogSlider} blog-slider`}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
           >
             {BLOG_POSTS}
           </Swiper>

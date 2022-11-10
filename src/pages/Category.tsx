@@ -13,8 +13,6 @@ const Category = (props: Props) => {
     const {category} = useParams()
     const {data, isFetching, error} = useGetProductByCategoryQuery({ category })
 
-    console.log(data);
-
   return (
     <Container>
       <section className={styles.categoryWrap}>
