@@ -6,15 +6,16 @@ import CartIcon from '../../assets/images/cart_white.svg'
 import styles from '../../css/Products/ProductList.module.css'
 
 type Props = {
-    product: Product
+    product: Product,
+    idx: number
 }
 
-const ProductCard = ({product}: Props) => {
+const ProductCard = ({product, idx}: Props) => {
 
   const {thumbnail, title, price, id, discountPercentage} = product
 
   return (
-    <li className={styles.productCard} style={{animationDelay: id + '00ms'}}>
+    <li className={styles.productCard} style={{animationDelay: idx + '00ms'}}>
       {discountPercentage ? <span className={styles.discount}>sale</span> : null}
       <Link to={`/shop/product/${id}`}/>
       <div className={styles.imgWrap}>

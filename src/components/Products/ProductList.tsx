@@ -12,8 +12,8 @@ const ProductList = ({products, layout}: Props) => {
   
   return (
     <ul className={layout === 4 ? `${styles.productList} ${styles.layout4}` : `${styles.productList} ${styles.layout5}`}>
-        {products?.map((product:Product,id:number) => (
-            <ProductCard key={`${product.title}-${id}`} product={product}/>
+        {products?.map((product:Product,idx:number) => (
+            <ProductCard key={`${product.title}-${idx}`} product={product} idx={idx}/>
         ))}
     </ul>
   )
