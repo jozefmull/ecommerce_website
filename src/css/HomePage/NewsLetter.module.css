@@ -1,0 +1,58 @@
+.newsLetter{
+    height: 150px;
+    background-color: var(--primary-btn-bg);
+    padding: 25px;
+}
+
+.newsLetter > section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    max-width: calc(1280px - 50px) !important;
+}
+
+.newsLetter > section .left{
+    text-align: left;
+    color: #fff;
+    width: 40%;
+}
+
+.newsLetter > section .left h2{
+    margin: 0.5rem 0;
+    margin-top: 0;
+}
+
+.newsLetter > section .left p{
+    margin: 0.25rem 0;
+}
+.newsLetter > section .right {
+    display: inline-flex;
+    width: 50%;
+}
+.newsLetter > section .right input{
+    width: 100%;
+    flex-grow: 1;
+    height: 30px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 10px 15px;
+}
+.newsLetter > section .right button{
+    outline: none;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 100px;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    transition: var(--transition);
+    cursor: pointer;
+    font-weight: 600;
+}
+.newsLetter > section .right button:hover{
+    background-color: var(--primary-btn-hover-bg);
+    color: #fff;
+}

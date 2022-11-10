@@ -1,0 +1,42 @@
+.blogSliderWrap{
+    padding: 10px 25px;
+}
+
+.blogSliderWrap h2{
+    text-align: left;
+    margin: 1rem 0;
+}
+.blogSliderWrap p{
+    text-align: left;
+}
+.blogSliderWrap .blogSlider{
+    cursor: grab;
+    margin: 50px 0px 25px 0;
+    position: relative;
+}
+.blogSliderWrap .blogSlider .blogSliderItem img{
+    max-width: 100%;
+}
+.blogSliderWrap .blogSlider .blogSliderItem h3{
+    margin: 0.5rem 0;
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+}
+
+.blogSliderWrap .blogSlider .nextArr{
+    position: absolute;
+    top: -75px;
+    right: 0;
+    padding: 15px;
+    background-color: #000;
+    cursor: pointer;
+}
+.blogSliderWrap .blogSlider .prevArr{
+    position: absolute;
+    top: -75px;
+    right: 50px;
+    padding: 15px;
+    background-color: #000;
+    cursor: pointer;
+}

@@ -1,13 +1,75 @@
+:root {
+  --font-color: #1D1F22;
+  --anim-duration: 1s;
+  --primary-btn-bg: #5ECE7B;
+  --primary-btn-hover-bg: #2d7c42;
+  --transition: all .325s ease-in-out;
+  --error-color: #cf4646;
+  --info-color: rgb(36, 166, 242);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Raleway',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--font-color);
+}
+
+body *{
+  font-family: 'Raleway' !important
+}
+button{
+  font-family: 'Raleway' !important
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+::selection {
+  background: #73e492;
+  color: #fff;
+}
+
+.hero-swiper .swiper-button-next,
+.hero-swiper .swiper-button-prev{
+  color: var(--primary-btn-hover-bg);
+}
+.hero-swiper .swiper-button-next{
+  right: 12.5%;
+}
+.hero-swiper .swiper-button-prev{
+  left: 12.5%;
+}
+.hero-swiper .swiper-pagination-bullet{
+  background: #fff !important;
+  opacity: 0.75  !important;
+}
+.hero-swiper .swiper-scrollbar-drag,
+.hero-swiper .swiper-pagination-bullet-active{
+  background: var(--primary-btn-hover-bg) !important;
+}
+

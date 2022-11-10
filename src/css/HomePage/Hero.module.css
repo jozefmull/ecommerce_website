@@ -1,0 +1,14 @@
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+.hero .heroSwiper{
+    cursor: grab;
+}
+
+.hero .heroSwiper img{
+    max-width: 100%;
+}

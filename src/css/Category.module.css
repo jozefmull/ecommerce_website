@@ -1,0 +1,27 @@
+.categoryWrap h1{
+    text-align: left;
+    padding: 50px 25px 0 25px;
+    text-transform: uppercase;
+}
+
+.categoryWrap button{
+    background-color: var(--primary-btn-bg);
+    color: #fff;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.categoryWrap button:disabled{
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.categoryWrap button:hover{
+    background-color: var(--primary-btn-hover-bg);
+}
+.categoryWrap button:hover:disabled{
+    background-color: #ccc;
+}

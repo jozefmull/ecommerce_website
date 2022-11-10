@@ -1,0 +1,87 @@
+.navigation{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.navigation .navigationWrap{
+    max-width: calc(1280px - 50px);
+    margin: 0 auto;
+    padding: 5px 25px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.navigation .navigationWrap .navLinks{
+    display: flex;
+    align-items: center;
+}
+.navigation .navigationWrap .navLinks > a:first-child{
+    margin-right: 10px;
+}
+.navigation .navigationWrap .navLinks > a{
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    font-size: 1rem;
+}
+.navigation .navigationWrap .navLinks > a:not(:first-child){
+    padding: 21px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: var(--transition);
+    font-weight: 600;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    color: #1D1F22;
+}
+.navigation .navigationWrap .navLinks > a:not(:first-child):hover,
+.navigation .navigationWrap .navLinks > a:not(:first-child):focus{
+    color: var(--primary-btn-bg) !important;
+}
+.navigation .navigationWrap .navLinks > a:not(:first-child):focus{
+    outline: none;
+}
+.navigation .navigationWrap .navLinks > a:not(:first-child):before{
+    display: block;
+    content: '';
+    border-bottom: solid 2px var(--primary-btn-bg);
+    transform: scaleX(0);
+    transition: var(--transition);
+    transform-origin: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.navigation .navigationWrap .navLinks > a:not(:first-child):hover:before,
+.navigation .navigationWrap .navLinks > a:not(:first-child):focus:before{
+    transform: scaleX(1);
+}
+.navigation .navigationWrap .navLinks > a:not(:first-child).activeNavLink{
+    color: var(--primary-btn-bg) !important;
+}
+.navigation .navigationWrap .navLinks > a:not(:first-child).activeNavLink:before{
+    transform: scaleX(1);
+}
+
+
+@keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+}

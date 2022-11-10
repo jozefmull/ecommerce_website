@@ -1,0 +1,29 @@
+.favouritesWrap{
+    padding: 10px 25px;
+}
+
+.favouritesWrap h2{
+    text-align: left;
+    margin: 1rem 0;
+}
+.favouritesWrap > a{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    max-width: 200px;
+    width: 100%;
+    margin-left: auto;
+    outline: 1px solid black;
+    margin-bottom: 25px;
+    background-color: var(--primary-btn-bg);
+    outline: none;
+    border: none;
+    color: #fff;
+    transition: var(--transition);
+    font-weight: 600;
+    border-radius: 5px;
+}
+.favouritesWrap > a:hover{
+    background-color: var(--primary-btn-hover-bg);
+}

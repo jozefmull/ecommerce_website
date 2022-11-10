@@ -1,0 +1,101 @@
+.productList{
+    display: grid;
+    column-gap: 15px;
+    row-gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 25px;
+}
+.productList.layout4{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.productList.layout5{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.productList .productCard{
+    position: relative;
+    align-self: stretch;
+    overflow: hidden;
+    padding: 15px;
+    transition: var(--transition);
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.15);
+    border-radius: 7px;
+}
+.productList .productCard .discount{
+    background-color: var(--primary-btn-bg);
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: absolute;
+    z-index: 5;
+    right: 5px;
+    top: 5px;
+}
+.productList .productCard:hover{
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.75);
+}
+.productList .productCard > a{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.productList .productCard .imgWrap{
+    position: relative;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: 4px;
+    outline: rgba(220, 220, 220, 0.5) 1px solid;
+}
+.productList .productCard .imgWrap .productImage{
+    max-width: auto;
+    height: 225px;
+}
+
+
+.productList .productCard .productCardInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+} 
+
+.productList .productCard .productCardInfo .cardCartIcon{
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-btn-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    transition: var(--transition);
+    transform: translateY(20px);
+    opacity: 0;
+    cursor: pointer;
+}
+.productList .productCard .productCardInfo .cardCartIcon:hover{
+    background-color: var(--primary-btn-hover-bg);
+}
+.productList .productCard:hover .productCardInfo .cardCartIcon{
+    opacity: 1;
+    transform: none;
+}
+.productList .productCard .productCardInfo h3{
+    margin: 0.5rem 0;
+    text-align: left;
+    font-weight: 400;
+}
+.productList .productCard .productCardInfo span{
+    text-align: left;
+    font-weight: 600;
+}

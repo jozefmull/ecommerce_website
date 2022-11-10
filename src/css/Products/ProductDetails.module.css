@@ -1,0 +1,127 @@
+.productDetailsWrap{
+    display: flex;
+    padding: 50px 25px 0 25px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.productDetailsWrap .productDetailsLeft{
+    width: 60%;
+}
+.productDetailsWrap .productDetailsRight{
+    width: 40%;
+    text-align: left;
+}
+.productDetailsWrap .productDetailsRight h1{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.productDetailsWrap .productDetailsRight h2{
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+.productDetailsWrap .productDetailsRight p{
+    font-weight: 400;
+    line-height: 1.5;
+}
+.productDetailsWrap .productDetailsRight .categoryButton{
+    padding: 2px 10px;
+    max-width: fit-content;
+    color: #fff;
+    flex-grow: 1;
+    flex-shrink: 1;
+    cursor: pointer;
+    transition: var(--transition);
+    background-color: var(--primary-btn-bg);
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+.productDetailsWrap .productDetailsRight .cartButton{
+    outline: none;
+    border: none;
+    width: 100%;
+    background-color: var(--primary-btn-bg);
+    transition: var(--transition);
+    padding:  15px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Raleway';
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+.productDetailsWrap .productDetailsRight button:hover,
+.productDetailsWrap .productDetailsRight .categoryButton:hover{
+    background-color: var(--primary-btn-hover-bg);
+}
+.productDetailsWrap .productDetailsRight .price,
+.productDetailsWrap .productDetailsRight .rating,
+.productDetailsWrap .productDetailsRight .stock,
+.productDetailsWrap .productDetailsRight .category{
+    margin: 1rem 0;
+}
+.productDetailsWrap .productDetailsRight .price h3,
+.productDetailsWrap .productDetailsRight .stock h3,
+.productDetailsWrap .productDetailsRight .rating h3,
+.productDetailsWrap .productDetailsRight .category h3{
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 0rem;
+}
+
+.productDetailsWrap .productDetailsRight .price span{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.productDetailsWrap .productDetailsRight .price div{
+    margin-bottom: 0.5rem;
+}
+.productDetailsWrap .productDetailsRight .price div .discount{
+    text-decoration: line-through;
+    font-size: 1.25rem;
+}
+.productDetailsWrap .productDetailsRight .price div em{
+    margin-left: 15px;
+    color: #fff;
+    background-color: var(--primary-btn-bg);
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.productDetailsWrap .productDetailsRight .price span.discountedPrice{
+    color: var(--primary-btn-bg) ;
+}
+
+.productDetailsWrap .productDetailsRight .stock{
+    display: flex;
+    align-items: center;
+}
+
+.productDetailsWrap .productDetailsRight .stock .inStock{
+    color: #fff;
+    font-weight: 600;
+    margin-left: 10px;
+    background-color: var(--primary-btn-bg) ;
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+.productDetailsWrap .productDetailsRight .stock .outOfStock{
+    color: #fff;
+    font-weight: 600;
+    margin-left: 10px;
+    background-color: red;
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem; 
+}

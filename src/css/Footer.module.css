@@ -1,0 +1,24 @@
+.footer{
+    min-height: 250px;
+    background-color: var(--font-color);
+    color: white;
+}
+
+.footer .footerWrap{
+    padding: 25px;
+    max-width: calc(1280px - 50px);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.footer .footerWrap .footerNavigation,
+.footer .footerWrap .footerAddress{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+
