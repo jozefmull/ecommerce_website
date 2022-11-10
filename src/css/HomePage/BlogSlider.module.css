@@ -17,13 +17,6 @@
 .blogSliderWrap .blogSlider .blogSliderItem img{
     max-width: 100%;
 }
-.blogSliderWrap .blogSlider .blogSliderItem h3{
-    margin: 0.5rem 0;
-    font-weight: 400;
-    font-size: 1.1rem;
-    padding: 0 0.5rem;
-}
-
 .blogSliderWrap .blogSlider .nextArr{
     position: absolute;
     top: -75px;

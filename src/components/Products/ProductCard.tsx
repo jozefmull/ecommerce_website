@@ -14,7 +14,7 @@ const ProductCard = ({product}: Props) => {
   const {thumbnail, title, price, id, discountPercentage} = product
 
   return (
-    <li className={styles.productCard}>
+    <li className={styles.productCard} style={{animationDelay: id + '50ms'}}>
       {discountPercentage ? <span className={styles.discount}>sale</span> : null}
       <Link to={`/shop/product/${id}`}/>
       <div className={styles.imgWrap}>

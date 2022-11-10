@@ -5,6 +5,7 @@ import BlogSlider from '../components/HomePage/BlogSlider'
 import NewsLetter from '../components/HomePage/NewsLetter'
 import Container from '../components/Container'
 
+
 type Props = {}
 
 const Home = (props: Props) => {

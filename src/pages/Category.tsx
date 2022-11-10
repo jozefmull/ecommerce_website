@@ -3,6 +3,7 @@ import {useGetProductByCategoryQuery} from '../app/services/productsApi'
 
 import Container from '../components/Container'
 import ProductList from '../components/Products/ProductList'
+import ProductLoader from '../components/Loading/HomePage/ProductLoader'
 
 import styles from '../css/Category.module.css'
 
@@ -17,9 +18,13 @@ const Category = (props: Props) => {
   return (
     <Container>
       <section className={styles.categoryWrap}>
-          <h1>{category} {`(${data?.total})`}</h1>
-          <ProductList products={data?.products} layout={5}/>
-          <button disabled={true}>LOAD MORE</button>
+          <h1>{category} ({data?.total !== undefined ? data?.total : 0})</h1>
+          {isFetching ? <ProductLoader/> : error ? 'error' : (
+          <>
+            <ProductList products={data?.products} layout={5}/>
+            <button disabled={true}>LOAD MORE</button>
+          </>
+        )}
       </section>
     </Container>
   )

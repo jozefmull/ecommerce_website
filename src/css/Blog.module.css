@@ -1,0 +1,136 @@
+.blogWrap{
+    padding: 50px 25px 0 25px;
+}
+.blogWrap button{
+    outline: none;
+    border: none;
+    transition: var(--transition);
+    background-color: var(--primary-btn-bg);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+.blogWrap button:hover{
+    background-color: var(--primary-btn-hover-bg);
+}
+.blogWrap h1{
+    text-align: left;
+}
+
+.blogWrap .blogList{
+    display: grid;
+    column-gap: 15px;
+    row-gap: 15px;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 25px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 2rem 0;
+}
+.blogCard{
+    position: relative;
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.15);
+    transition:var(--transition) ;
+    border-radius: 5px;
+}
+.blogCard div{
+    padding: 5px 10px;
+}
+.blogCard > a{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.blogWrap .blogList .blogCard:hover{
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.75);
+}
+.blogCard img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; 
+}
+.blogWrap .blogList .blogCard img{
+    max-width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 100%;
+    max-height: 125px;
+}
+.blogCard h3{
+    margin: 0.5rem 0;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.postDetailsWrap{
+    padding: 50px 25px 50px 25px;
+    min-height: calc(100vh - 250px - 60px - 100px);
+    text-align: left;
+}
+.postDetailsWrap h1{
+    margin-bottom: 0.25rem;
+}
+.postDetailsWrap h2{
+    margin: 0.5rem 0;
+    font-size: 1.15rem;
+}
+.postDetailsWrap p{
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.tagsList{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.tagsList li{
+    padding: 2px 10px;
+    width: fit-content;
+    background-color: var(--primary-btn-bg);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.postDetailsWrap .commentsList{
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 7px;
+    background-color: #f0f0f0;
+}
+
+.postDetailsWrap .commentsList li{
+    background-color: #DFDFDF;
+    width: calc(100% - 20px);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 0 5px 0;
+}
+.postDetailsWrap .commentsList li p{
+    background-color: #fff;
+    padding: 5px 15px;
+    border-radius: 4px;
+    margin: 0.5rem 0 0 0;
+}
+
+.postDetailsWrap .commentsList li span{
+    font-weight: 600;
+    margin-left: 5px;
+}

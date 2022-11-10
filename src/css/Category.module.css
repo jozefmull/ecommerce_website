@@ -1,6 +1,9 @@
+.categoryWrap{
+    padding: 50px 25px 50px 25px;
+    min-height: calc(100vh - 250px - 60px - 100px);
+}
 .categoryWrap h1{
     text-align: left;
-    padding: 50px 25px 0 25px;
     text-transform: uppercase;
 }
 

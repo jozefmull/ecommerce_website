@@ -1,24 +1,63 @@
 .footer{
     min-height: 250px;
-    background-color: var(--font-color);
-    color: white;
+    background-color: #DFDFDF;
+    color: var(--primary-btn-hover-bg);
 }
 
-.footer .footerWrap{
+.footer section{
+    max-width: calc(1280px - 50px) !important ;
     padding: 25px;
-    max-width: calc(1280px - 50px);
     width: 100%;
     margin: 0 auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    display: flex ;
+    align-items: flex-start ;
+    justify-content: space-between ;
 }
-
-.footer .footerWrap .footerNavigation,
-.footer .footerWrap .footerAddress{
+.footer section .left{
+    width: 100%;
+    max-width: 30%;
+}
+.footer section .left div{
+    display: flex;
+}
+.footer section .left div h3{
+    margin-left: 1rem;
+}
+.footer section .left p{
+    text-align: left;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--font-color);
+}
+.footer section .footerNavigation,
+.footer section .footerAddress{
+    width: 100%;
+    max-width: 25%;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: right;
 }
+.footer section .footerNavigation > a{
+    text-decoration: none;
+    color: var(--font-color);
+    padding: 3px 15px;
+    padding-right: 0px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.footer section .footerNavigation > a:hover{
+    color: var(--primary-btn-hover-bg);
+}
+
+
+.footer section .footerAddress p{
+    margin: 0;
+    color: var(--font-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
 
 

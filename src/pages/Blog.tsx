@@ -1,10 +1,25 @@
-import React from 'react'
+import { useGetAllPostsQuery } from '../app/services/postsApi'
 
-type Props = {}
+import Container from '../components/Container'
+import BlogCard from '../components/Blog/BlogCard'
 
-const Blog = (props: Props) => {
+import styles from '../css/Blog.module.css'
+
+const Blog = () => {
+  const {data, isFetching, error} = useGetAllPostsQuery()
+
   return (
-    <div>Blog</div>
+    <Container>
+      <div className={styles.blogWrap}>
+        <h1>Blog</h1>
+        <div className={styles.blogList}>
+          {data?.posts?.map((post,id) => (
+            <BlogCard key={`post-${id}`} post={post} id={id} />
+          ))}
+        </div>
+        <button>LOAD MORE</button>
+      </div>
+    </Container>
   )
 }
 

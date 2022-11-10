@@ -72,4 +72,13 @@ code {
 .hero-swiper .swiper-pagination-bullet-active{
   background: var(--primary-btn-hover-bg) !important;
 }
+.blog-slider .swiper-button-next,
+.blog-slider .swiper-button-prev{
+  color: var(--primary-btn-hover-bg);
+  top: 35%;
+}
+.blog-slider .swiper-button-next:after,
+.blog-slider .swiper-button-prev:after{
+  font-size: 2rem;
+}
 
