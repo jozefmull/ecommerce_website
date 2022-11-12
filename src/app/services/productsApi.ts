@@ -12,7 +12,7 @@ export const productsApi = createApi({
             providesTags: [{ type: "Products", id: "FAVOURITE_PRODUCTS_LIST" }],
         }),
         getAllProducts: builder.query<Products, void>({
-          query: () => `products`,
+          query: () => `products?limit=16`,
           providesTags: [{ type: "Products", id: "PRODUCTS_LIST" }],
         }),
         getProductsCategories: builder.query<String[], void>({
@@ -26,6 +26,10 @@ export const productsApi = createApi({
         getProductByCategory: builder.query<Products, {category: string | undefined}>({
             query: ({category}) => `products/category/${category}`,
             providesTags: [{type: "Products", id: "PRODUCTS_BY_CATEGORY_LIST"}]
+        }),
+        loadMoreProducts: builder.query<Products, {skip: number | undefined}>({
+            query: ({skip}) => `products?limit=16&skip=${skip}`,
+            providesTags: [{ type: "Products", id: "LOAD_MORE_PRODUCTS" }],
         })
     }),
 })
@@ -35,6 +39,7 @@ export const {
     useGetProductsCategoriesQuery,
     useGetFavouriteProductsQuery,
     useGetProductQuery,
-    useGetProductByCategoryQuery
+    useGetProductByCategoryQuery,
+    useLoadMoreProductsQuery
   } = productsApi;
     

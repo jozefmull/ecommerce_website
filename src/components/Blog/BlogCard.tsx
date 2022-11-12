@@ -11,8 +11,9 @@ type Props = {
 }
 
 const BlogCard = ({post, id}: Props) => {
+
   return (
-    <div key={`post-${id}`} className={styles.blogCard}>
+    <div key={`post-${id}`} className={styles.blogCard} >
         <Link to={`/blog/post/${post.id}`} />
         <img src={BlogPostImage} alt='blog-post' />
         <div>

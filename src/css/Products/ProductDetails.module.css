@@ -1,6 +1,6 @@
 .productDetailsWrap{
     display: flex;
-    padding: 50px 25px 0 25px;
+    padding: 50px 25px 50px 25px;
     align-items: flex-start;
     justify-content: space-between;
 }

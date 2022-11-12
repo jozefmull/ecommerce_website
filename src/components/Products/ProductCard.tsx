@@ -1,4 +1,8 @@
+import { useAppDispatch } from '../../app/hooks'
+import { addToCart } from '../../app/features/cart'
+
 import {Link} from 'react-router-dom'
+import StarRating from './StarRating'
 
 import { Product } from "../../app/types/products"
 
@@ -7,25 +11,28 @@ import styles from '../../css/Products/ProductList.module.css'
 
 type Props = {
     product: Product,
-    idx: number
+    idx: number,
+    anim: boolean
 }
 
-const ProductCard = ({product, idx}: Props) => {
+const ProductCard = ({product, idx, anim}: Props) => {
+  const dispatch = useAppDispatch()
 
-  const {thumbnail, title, price, id, discountPercentage} = product
+  const {thumbnail, title, price, id, discountPercentage, rating} = product
 
   return (
-    <li className={styles.productCard} style={{animationDelay: idx + '00ms'}}>
+    <li className={styles.productCard} style={anim ? {animationDelay: idx + '00ms'} : undefined}>
       {discountPercentage ? <span className={styles.discount}>sale</span> : null}
       <Link to={`/shop/product/${id}`}/>
       <div className={styles.imgWrap}>
         <img src={thumbnail} alt='product' className={styles.productImage} width={'auto'} loading="lazy"/>
       </div>
       <div className={styles.productCardInfo}>
-        <div className={styles.cardCartIcon}>
+        <div className={styles.cardCartIcon} onClick={() => dispatch(addToCart(product))}>
           <img src={CartIcon} alt='card-cart-icon'/>
         </div>
         <h3>{title}</h3>
+        <StarRating rating={rating} size={'sm'}/>
         <span>$ {price}</span>
       </div>
     </li>

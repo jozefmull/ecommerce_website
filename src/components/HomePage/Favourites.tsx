@@ -15,7 +15,7 @@ const Favourites = () => {
       {/* if fetching loader if not check error if not error display data */}
       {isFetching ? <ProductLoader/> : error ? 'error' : (
           <>
-            <ProductList products={data?.products} layout={4}/>
+            <ProductList products={data?.products} layout={4} anim={true}/>
             <Link to='/shop'>SEE MORE</Link>
           </>
         )}

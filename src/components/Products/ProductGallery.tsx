@@ -5,7 +5,6 @@ type Props = {
 }
 
 const ProductGallery = ({images}: Props) => {
-  console.log(images);
   
   return (
     <div className={styles.galleryWrap}>

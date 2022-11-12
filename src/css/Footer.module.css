@@ -5,13 +5,13 @@
 }
 
 .footer section{
-    max-width: calc(1280px - 50px) !important ;
     padding: 25px;
-    width: 100%;
+    width: calc(100% - 50px) !important; 
     margin: 0 auto;
     display: flex ;
     align-items: flex-start ;
     justify-content: space-between ;
+    max-width: calc(1280px - 50px) !important ;
 }
 .footer section .left{
     width: 100%;
@@ -61,3 +61,13 @@
 
 
 
+@media only screen and (max-width: 567px) {
+    .footer section{
+        flex-direction: column;
+    }
+    .footer section .footerNavigation,
+    .footer section .footerAddress,
+    .footer section .left{
+        max-width: unset;
+    }
+}

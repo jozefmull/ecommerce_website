@@ -96,13 +96,15 @@
     transform: none;
 }
 .productList .productCard .productCardInfo h3{
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 0 0;
     text-align: left;
     font-weight: 400;
 }
 .productList .productCard .productCardInfo span{
     text-align: left;
     font-weight: 600;
+    margin: 0.25rem 0 0 0;
+
 }
 
 @keyframes fadeInDown {
@@ -113,5 +115,21 @@
     100% {
        opacity: 1;
        transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .productList.layout4{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .productList.layout4{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .productList.layout4{
+        grid-template-columns: 1fr;
     }
 }

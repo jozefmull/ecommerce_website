@@ -10,12 +10,19 @@
     justify-content: space-between;
     padding: 0 25px;
     max-width: calc(1280px - 50px) !important;
+    width: unset !important;
 }
 
 .newsLetter > section .left{
     text-align: left;
     color: #fff;
     width: 40%;
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
 }
 
 .newsLetter > section .left h2{
@@ -29,6 +36,13 @@
 .newsLetter > section .right {
     display: inline-flex;
     width: 50%;
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    animation-delay: 250ms;
 }
 .newsLetter > section .right input{
     width: 100%;
@@ -55,4 +69,26 @@
 .newsLetter > section .right button:hover{
     background-color: var(--primary-btn-hover-bg);
     color: #fff;
+}
+
+@keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-10px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .newsLetter > section{
+        flex-direction: column !important;
+        padding: 0px !important;
+    }
+    .newsLetter > section > .left,
+    .newsLetter > section > .right{
+        width: 100%;
+    }
 }

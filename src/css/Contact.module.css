@@ -1,23 +1,20 @@
 .contactWrap{
     text-align: left;
+    padding: 50px 25px 50px 25px !important;
     min-height: calc(100vh - 250px - 60px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 .contactWrap > section{
-    padding: 50px 25px 50px 25px !important;
     max-width: calc(1280px - 50px) !important;
 }
 .contactWrap .layoutWrap{
-    /* padding: 50px 25px 50px 25px; */
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
 .contactWrap .layoutWrap .left,
 .contactWrap .layoutWrap .right{
-    width: 45%;
+    width: 100%;
+    max-width: 45%;
 }
 
 .contactWrap .layoutWrap .right{
@@ -118,4 +115,17 @@
 .contactWrap .layoutWrap .right .form button:hover{
     background-color: var(--primary-btn-hover-bg);
     color: #fff;
+}
+
+@media only screen and (max-width: 900px) {
+    .contactWrap .layoutWrap{
+        flex-direction: column;
+    }
+    .contactWrap .layoutWrap .left,
+    .contactWrap .layoutWrap .right{
+        max-width: calc(100% - 50px);
+    }
+    .contactWrap .layoutWrap .left{
+        margin-bottom: 50px;
+    }
 }

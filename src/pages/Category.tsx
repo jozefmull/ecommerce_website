@@ -19,7 +19,7 @@ const Category = (props: Props) => {
           <h1>{category} ({data?.total !== undefined ? data?.total : 0})</h1>
           {isFetching ? <ProductLoader/> : error ? 'error' : (
           <>
-            <ProductList products={data?.products} layout={5}/>
+            <ProductList products={data?.products} layout={5} anim={false}/>
             <button disabled={true}>LOAD MORE</button>
           </>
         )}

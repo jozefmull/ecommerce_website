@@ -1,0 +1,94 @@
+.productLoaderWrap{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 50px 0;
+    padding: 0 25px;
+}
+
+.productLoaderWrap > .left {
+    margin-right: 35px;
+    width: 50%;
+}
+.productLoaderWrap > .right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.productLoaderWrap > .left > div,
+.productLoaderWrap > .right > div{
+    flex-grow: 1;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    height: 350px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    background-color: #DFDFDF;
+    width: 100%;
+}
+.productLoaderWrap > .left > div:after,
+.productLoaderWrap > .right > div:after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+        90deg,
+        rgba(255,255,255, 0) 0,
+        rgba(255,255,255, 0.2) 20%,
+        rgba(255,255,255, 0.5) 60%,
+        rgba(255,255,255, 0));
+    animation: shimmer 2s infinite;
+    content: '';
+}
+.productLoaderWrap > .right > div:first-child{
+    height: 15px !important;
+    max-width: 300px !important;
+    margin-bottom: 10px;
+}
+.productLoaderWrap > .right > div:nth-child(2){
+    height: 15px !important;
+    max-width: 250px !important;
+    margin-bottom: 10px;
+}
+
+.productLoaderWrap > .right > div:nth-child(3),
+.productLoaderWrap > .right > div:nth-child(4),
+.productLoaderWrap > .right > div:nth-child(5),
+.productLoaderWrap > .right > div:nth-child(6){
+    height: 10px !important;
+    max-width: 225px !important;
+    margin-bottom: 10px;
+}
+.productLoaderWrap > .right > div:nth-child(7){
+    height: 20px !important;
+    margin-bottom: 10px;
+}
+.productLoaderWrap > .right > div:nth-child(8){
+    height: 40px !important;
+    margin-bottom: 10px;
+}
+/* .productLoaderWrap > div{
+    flex-grow: 1;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    height: 150px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    background-color: #DFDFDF;
+} */
+
+
+@keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+}

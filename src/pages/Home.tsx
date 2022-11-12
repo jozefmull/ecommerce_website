@@ -5,10 +5,7 @@ import BlogSlider from '../components/HomePage/BlogSlider'
 import NewsLetter from '../components/HomePage/NewsLetter'
 import Container from '../components/Container'
 
-
-type Props = {}
-
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <section style={{overflow: 'hidden'}}>
       <Hero />

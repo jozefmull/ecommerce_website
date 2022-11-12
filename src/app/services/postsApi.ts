@@ -12,7 +12,7 @@ export const postsApi = createApi({
             providesTags: [{ type: "Posts", id: "SWIPER_POSTS_LIST" }],
         }),
         getAllPosts: builder.query<Posts, void>({
-            query: () => `posts`,
+            query: () => `posts?limit=15`,
             providesTags: [{ type: "Posts", id: "POSTS_LIST" }],
         }),
         getPostDetails: builder.query<Post, {postId: string | undefined}>({
@@ -22,6 +22,10 @@ export const postsApi = createApi({
         getPostComments: builder.query<Comments, {postId: string | undefined}>({
             query: ({postId}) => `posts/${postId}/comments`,
             providesTags: [{ type: "Posts", id: "POST_COMMENTS" }],
+        }),
+        loadMorePosts: builder.query<Posts, {skip: number | undefined}>({
+            query: ({skip}) => `posts?limit=15&skip=${skip}`,
+            providesTags: [{ type: "Posts", id: "LOAD_MORE_POSTS" }],
         })
     }),
 })
@@ -30,6 +34,7 @@ export const {
     useGetSwiperPostsQuery,
     useGetAllPostsQuery,
     useGetPostDetailsQuery,
-    useGetPostCommentsQuery
+    useGetPostCommentsQuery,
+    useLoadMorePostsQuery
   } = postsApi;
     

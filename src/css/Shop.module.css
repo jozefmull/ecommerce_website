@@ -1,0 +1,41 @@
+.shopWrap{
+    padding: 50px 25px 50px 25px;
+    min-height: calc(100vh - 60px - 100px - 250px);
+    text-align: left;
+}
+
+.shopWrap button{
+    display: block;
+    background-color: var(--primary-btn-bg);
+    max-width: 150px;
+    width: 100%;
+    margin: 25px auto 50px auto;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.shopWrap button:hover{
+    background-color: var(--primary-btn-hover-bg);
+}
+.shopWrap button:disabled,
+.shopWrap button:hover:disabled{
+    background-color: #ccc !important;
+    cursor: not-allowed;
+}
+.shopWrap .loadMoreWrap{
+    display: flex;
+    flex-direction: column;
+}
+.shopWrap .loadMoreWrap > span{
+    background-color: rgb(251, 135, 135);
+    padding: 3px 10px;
+    border-radius: 5px;
+    color: #fff;
+    max-width: fit-content;
+    margin: 25px auto 0 auto;
+}

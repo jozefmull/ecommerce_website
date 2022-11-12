@@ -5,14 +5,35 @@
 .blogSliderWrap h2{
     text-align: left;
     margin: 1rem 0;
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
 }
 .blogSliderWrap p{
     text-align: left;
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    animation-delay: 250ms;
 }
 .blogSliderWrap .blogSlider{
     cursor: grab;
     margin: 50px 0px 25px 0;
     position: relative;
+}
+.blogSliderWrap .blogSlider .blogSliderItem{
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
 }
 .blogSliderWrap .blogSlider .blogSliderItem img{
     max-width: 100%;
@@ -32,4 +53,15 @@
     padding: 15px;
     background-color: #000;
     cursor: pointer;
+}
+
+@keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-10px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
 }
