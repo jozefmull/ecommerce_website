@@ -4,6 +4,41 @@
     z-index: 100;
     background-color: rgba(255, 255, 255, 0.8);
 }
+.mobileNav{
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 75;
+}
+.mobileNav > button {
+    background-color: var(--primary-btn-bg);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: var(--transition);
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+    position: relative;
+    z-index: 100;
+}
+.mobileNav > button:hover{
+    background-color: var(--primary-btn-hover-bg);
+}
+.mobileNav > .navLinksWrap{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .navigation .navigationWrap{
     max-width: calc(1280px - 50px);
     margin: 0 auto;
@@ -14,6 +49,7 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .navigation .navigationWrap .navLinks{
     display: flex;
     align-items: center;
@@ -21,7 +57,11 @@
 .navigation .navigationWrap .navLinks > a:first-child{
     margin-right: 10px;
 }
-.navigation .navigationWrap .navLinks > a{
+.mobileNav > .navLinksWrap > a{
+    padding: 15px 20px !important;
+}
+.navigation .navigationWrap .navLinks > a,
+.mobileNav > .navLinksWrap > a{
     -webkit-animation-duration: var(--anim-duration);
     animation-duration: var(--anim-duration);
     -webkit-animation-fill-mode: both;
@@ -30,7 +70,8 @@
     animation-name: fadeInDown;
     font-size: 1rem;
 }
-.navigation .navigationWrap .navLinks > a:not(:first-child){
+.navigation .navigationWrap .navLinks > a:not(:first-child),
+.mobileNav > .navLinksWrap > a{
     padding: 23px 20px;
     text-decoration: none;
     text-transform: uppercase;
@@ -44,13 +85,16 @@
     color: #1D1F22;
 }
 .navigation .navigationWrap .navLinks > a:not(:first-child):hover,
-.navigation .navigationWrap .navLinks > a:not(:first-child):focus{
+.navigation .navigationWrap .navLinks > a:not(:first-child):focus,
+.mobileNav > .navLinksWrap > a:hover,
+.mobileNav > .navLinksWrap > a:focus{
     color: var(--primary-btn-bg) !important;
 }
 .navigation .navigationWrap .navLinks > a:not(:first-child):focus{
     outline: none;
 }
-.navigation .navigationWrap .navLinks > a:not(:first-child):before{
+.navigation .navigationWrap .navLinks > a:not(:first-child):before,
+.mobileNav > .navLinksWrap > a:before{
     display: block;
     content: '';
     border-bottom: solid 2px var(--primary-btn-bg);
@@ -64,16 +108,19 @@
     width: 100%;
 }
 .navigation .navigationWrap .navLinks > a:not(:first-child):hover:before,
-.navigation .navigationWrap .navLinks > a:not(:first-child):focus:before{
+.navigation .navigationWrap .navLinks > a:not(:first-child):focus:before,
+.mobileNav > .navLinksWrap > a:hover:before,
+.mobileNav > .navLinksWrap > a:focus:before{
     transform: scaleX(1);
 }
-.navigation .navigationWrap .navLinks > a:not(:first-child).activeNavLink{
+.navigation .navigationWrap .navLinks > a:not(:first-child).activeNavLink,
+.mobileNav > .navLinksWrap > a.activeNavLink{
     color: var(--primary-btn-bg) !important;
 }
-.navigation .navigationWrap .navLinks > a:not(:first-child).activeNavLink:before{
+.navigation .navigationWrap .navLinks > a:not(:first-child).activeNavLink:before,
+.mobileNav > .navLinksWrap > a.activeNavLink:before{
     transform: scaleX(1);
 }
-
 .navigation .navigationWrap .cartWrap{
     position: relative;
     cursor: pointer;
@@ -110,6 +157,19 @@
     cursor: default;
     box-shadow: 0px 7px 10px rgba(168, 172, 176, 0.2);
 }
+.navigation .navigationWrap .cartWrap .miniCart .total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.navigation .navigationWrap .cartWrap .miniCart .total h3,
+.navigation .navigationWrap .cartWrap .miniCart .total h4{
+    margin: 0;
+}
+.navigation .navigationWrap .cartWrap .miniCart .total h3{
+    font-size: 1rem;
+}
 .navigation .navigationWrap .cartWrap .miniCart h3{
     margin: .75rem 0;
     text-align: left;
@@ -118,11 +178,9 @@
     font-weight: 400;
 }
 .navigation .navigationWrap .cartWrap .miniCart ul{
+    margin: 1rem 0 2rem 0;
     padding: 0;
-    margin: 0;
     list-style: none;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
     max-height: 300px;
     overflow-y: auto;
 }
@@ -143,6 +201,20 @@
     display: flex;
     align-items: center;
     min-height: 100%;
+    position: relative;
+}
+.navigation .navigationWrap .cartWrap .miniCart ul li .right > .sale{
+    background-color: var(--primary-btn-bg);
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    top: 0;
+    font-weight: 700;
 }
 .navigation .navigationWrap .cartWrap .miniCart ul li .right .qtyWrap{
     display: flex;
@@ -183,7 +255,7 @@
     text-align: left;
     margin: 0.5rem 0 0.25rem 0;
 }
-.navigation .navigationWrap .cartWrap .miniCart ul li .left img{
+.navigation .navigationWrap .cartWrap .miniCart ul li .right img{
     width: 100%;
     max-width: 100px;
 }
@@ -257,3 +329,23 @@
        transform: translateY(0);
     }
 }
+@media only screen and (max-width: 576px) {
+    .navigation .navigationWrap > .navLinks > a:not(:first-child){
+        display: none !important;
+        visibility: hidden !important;
+    }
+    .mobileNav{
+        display: unset !important;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .navigation .navigationWrap .cartWrap .miniCart{
+        width: 200px;
+    }
+    .navigation .navigationWrap .cartWrap .miniCart ul li .right img,
+    .navigation .navigationWrap .cartWrap .miniCart ul li .right > span{
+        display: none;
+    }
+}
+

@@ -36,19 +36,19 @@ const BlogSlider = () => {
             slidesPerView={4}
             className={`${styles.blogSlider} blog-slider`}
             breakpoints={{
-              420: {
+              0:{
                 slidesPerView: 1,
               },
-              576: {
+              480: {
                 slidesPerView: 2,
               },
-              768: {
+              576: {
                 slidesPerView: 3,
               },
-              992: {
+              768: {
                 slidesPerView: 4,
               },
-              1200:{
+              992: {
                 slidesPerView: 5,
               }
             }}

@@ -7,17 +7,20 @@ import StarRating from '../Products/StarRating'
 import styles from '../../css/Nav.module.css'
 
 type Props = {
-  handleOpenMiniCart: React.Dispatch<React.SetStateAction<boolean>>
+  handleOpenMiniCart: React.Dispatch<React.SetStateAction<boolean>>,
+  totalItems: number
+  totalPrice: string | number
 }
 
-const MiniCart = ({handleOpenMiniCart}: Props) => {
+const MiniCart = ({handleOpenMiniCart, totalItems, totalPrice}: Props) => {
   const dispatch = useAppDispatch()
   const cart = useAppSelector((state) => state.cart)
   const {cart:myCart} = cart
 
+
   return (
     <div className={styles.miniCart}>
-      <h3>Your cart: <span>{myCart.length} {myCart.length > 1 ? 'Items' : 'Item'}</span></h3>
+      <h3>Your cart: <span>{totalItems} {totalItems > 1 ? 'Items' : 'Item'}</span></h3>
       {myCart.length > 0 ? (
         <>
           <ul>
@@ -41,6 +44,7 @@ const MiniCart = ({handleOpenMiniCart}: Props) => {
                   </div>
                 </div>
                 <div className={styles.right}>
+                  <span className={styles.sale}>SALE</span>
                   <div className={styles.qtyWrap}>
                     <span onClick={() => dispatch(incrementQty(item))}>&#43;</span>
                     <em>{item.qty}</em>
@@ -51,6 +55,10 @@ const MiniCart = ({handleOpenMiniCart}: Props) => {
               </li>
             ))}
           </ul>
+          <div className={styles.total}>
+            <h3>Total: </h3>
+            <h4>$ {totalPrice}</h4>
+          </div>
           <div className={styles.btnWrap}>
             <Link to='/cart' onClick={() => handleOpenMiniCart(false)}>CART</Link>
             <Link to='/checkout' onClick={() => handleOpenMiniCart(false)}>CHECKOUT</Link>

@@ -2,7 +2,9 @@ import { useAppDispatch } from '../../app/hooks'
 import { addToCart } from '../../app/features/cart'
 
 import {Link} from 'react-router-dom'
+
 import StarRating from './StarRating'
+import SaleBadge from './SaleBadge'
 
 import { Product } from "../../app/types/products"
 
@@ -22,7 +24,7 @@ const ProductCard = ({product, idx, anim}: Props) => {
 
   return (
     <li className={styles.productCard} style={anim ? {animationDelay: idx + '00ms'} : undefined}>
-      {discountPercentage ? <span className={styles.discount}>sale</span> : null}
+      {discountPercentage ? <SaleBadge/> : null}
       <Link to={`/shop/product/${id}`}/>
       <div className={styles.imgWrap}>
         <img src={thumbnail} alt='product' className={styles.productImage} width={'auto'} loading="lazy"/>

@@ -1,5 +1,6 @@
 .blogWrap{
-    padding: 50px 25px 0 25px;
+    padding: 50px 25px 50px 25px;
+    min-height: calc(100vh - 60px - 100px - 250px);
 }
 .blogWrap button{
     outline: none;
@@ -56,7 +57,7 @@
     box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.15);
     transition:var(--transition) ;
     border-radius: 5px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
     -webkit-animation-duration: var(--anim-duration);
     animation-duration: var(--anim-duration);
     -webkit-animation-fill-mode: both;
@@ -65,7 +66,7 @@
     animation-name: fadeInDown;
 }
 .blogCard div{
-    padding: 5px 10px 0px 10px;
+    padding: 5px 7px 0px 7px;
 }
 .blogCard > a{
     position: absolute;
@@ -137,16 +138,18 @@
     margin: 0;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .tagsList li{
-    padding: 2px 10px;
+    padding: 2px 7px;
     width: fit-content;
     background-color: var(--primary-btn-bg);
     color: #fff;
     font-weight: 600;
     font-size: 0.8rem;
-    margin-right: 5px;
+    margin-right: 3px;
+    margin-bottom: 2px;
     border-radius: 5px;
     -webkit-animation-duration: var(--anim-duration);
     animation-duration: var(--anim-duration);

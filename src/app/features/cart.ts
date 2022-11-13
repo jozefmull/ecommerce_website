@@ -6,13 +6,13 @@ import {Product, CartProduct} from '../types/products'
 // Define a type for the slice state
 interface CartState {
   cart: CartProduct[],
-  overlay: boolean
+  overlay: boolean,
 }
 
 // Define the initial state using that type
 const initialState: CartState = {
   cart: [],
-  overlay: false
+  overlay: false,
 }
 
 export const cartSlice = createSlice({
@@ -40,15 +40,11 @@ export const cartSlice = createSlice({
       const item = state.cart.find(item => item.title === action.payload.title);
       if (item) {
         if (item.qty === 1) {
-          item.qty = 1
+          state.cart = state.cart.filter(cartItem => cartItem.title !== action.payload.title)
         }else{
           item.qty--
         }
       }
-    },
-    removeItem: (state, action: PayloadAction<Product>) => {
-      // const removeItem = state.cart.filter((item) => item.id !== action.payload);
-      // state.cart = removeItem;
     },
     handleOverlay: (state, action) => {
       state.overlay = action.payload
