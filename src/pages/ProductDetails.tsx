@@ -1,4 +1,4 @@
-import {useParams} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import {useGetProductQuery} from '../app/services/productsApi'
 import { useAppDispatch } from '../app/hooks'
 import { addToCart } from '../app/features/cart'
@@ -31,7 +31,7 @@ const ProductDetails = (props: Props) => {
                                 <div className={styles.category}>
                                     <div>
                                         <h3>Category:</h3>
-                                        <button className={styles.categoryButton}>{data?.category}</button>
+                                        <Link className={styles.categoryButton} to={`/categories/${data?.category}`}>{data?.category}</Link>
                                     </div>
                                 </div>
                                 <div className={styles.price}>

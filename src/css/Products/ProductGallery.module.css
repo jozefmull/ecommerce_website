@@ -6,31 +6,93 @@
 }
 
 .galleryWrap img{
-    max-height: 500px;
+    max-height: 400px;
+    max-width: 100%;
     width: auto;
+}
+.galleryWrap > .currentImgWrap{
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.galleryWrap > .currentImgWrap > img{
+    transition: var(--transition);
 }
 .galleryWrap ul{
     margin: 0;
     margin-right: 25px; 
     max-width: 100px;
+    width: 100%;
+    min-width: 100px;
     list-style: none;
     padding: 0;
-    max-height: 500px;
+    max-height: 400px;
     overflow-y: auto;
 }
 .galleryWrap ul li{
     height: 80px;
-    width: calc(100% - 6px);
+    width: 80px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     background-color: #e8e8e8;
     margin: 5px 0;
     padding: 3px;
+    filter: grayscale(0.75);
+    transition: var(--transition);
+    cursor: pointer;
+    mix-blend-mode: darken;
+    user-select: none;
 }
-
+.galleryWrap ul li:hover{
+    filter: grayscale(0);
+}
+.galleryWrap ul li.current{
+    filter: grayscale(0) !important;
+}
 .galleryWrap ul li img{
     max-width: 100%;
     mix-blend-mode: darken;
     max-height: 100%;
+}
+@media only screen and (max-width: 576px) {
+    .galleryWrap ul{
+        margin-right: 15px; 
+        max-width: 75px;
+        min-width: 75px;
+    }
+    .galleryWrap ul li{
+        height: 65px;
+        width: 65px;
+    }  
+}
+@media only screen and (max-width: 480px) {
+    .galleryWrap {
+        flex-direction: column;
+    }
+    .galleryWrap ul{
+        max-width: unset;
+        min-width: unset;
+        margin-right: 0;
+        width: 100%;
+        height: 100%;
+        max-height: unset;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .galleryWrap ul li{
+        margin: 0px 0px 5px 5px;
+    }
+    .currentImgWrap{
+        height: 100%;
+        max-height: unset !important;
+        min-height: unset !important;
+        margin-top: 1rem
+    }
 }

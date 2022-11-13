@@ -42,6 +42,9 @@
     font-weight: 600;
     margin-top: 0.5rem;
     text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    font-size: 0.75rem;
 }
 .productDetailsWrap .productDetailsRight .cartButton{
     outline: none;
@@ -124,4 +127,15 @@
     padding: 2px 10px;
     border-radius: 5px;
     font-size: 0.8rem; 
+}
+
+@media only screen and (max-width: 768px) {
+    .productDetailsWrap{flex-direction: column;}
+    .productDetailsWrap .productDetailsRight,
+    .productDetailsWrap .productDetailsLeft{
+        width: 100%;
+    }
+    .productDetailsWrap .productDetailsLeft{
+        margin-bottom: 25px;
+    }
 }
